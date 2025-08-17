@@ -44,7 +44,7 @@ class App extends Component {
             </div>
           </Content>
             <Footer>
-               <div>
+               <div style={styles.footer}>
                   <a 
                     href="https://github.com/YemmyFolayan" 
                     target="_blank" 
@@ -73,9 +73,10 @@ const styles = {
     borderRadius: '3px'
   },
   footer: {
+    width: '100%',
     padding: '16px 24px',
-    color: 'rgba(255, 255, 255, 0.65)',
-    background: '#001529',
+    color: '#001529',
+    //background: '#001529',
     textAlign: 'center',
     borderTop: '1px solid rgba(12, 7, 42, 0.1)'
   }
