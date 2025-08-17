@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../images/raven.svg';
+import logo from '../../images/futa.png';
 
 export default class Logo extends Component {
   render() {
@@ -17,7 +17,7 @@ export default class Logo extends Component {
         <p
           style={{ padding: 20, color: 'white', fontSize: 20, fontWeight: 100 }}
         >
-          Raven <span style={{ fontSize: 16, fontWeight: 100, opacity: 0.6}}>{'v0.1a'}</span>
+          Akure <span style={{ fontSize: 16, fontWeight: 100, opacity: 0.6}}>{'v0.1'}</span>
         </p>
       </div>
     );

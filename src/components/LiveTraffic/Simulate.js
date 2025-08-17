@@ -38,7 +38,7 @@ class Lights extends Component {
 
 export default class LiveTraffic extends Component {
   static defaultProps = {
-    center: {lat: 30.7263911, lng: 76.7592896},
+    center: { lat: 7.2571, lng: 5.2058 },
     zoom: 14
   };
 

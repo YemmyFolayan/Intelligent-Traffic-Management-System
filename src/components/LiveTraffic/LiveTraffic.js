@@ -4,10 +4,10 @@ import Trafficlight from './Trafficlight';
 
 export default class LiveTraffic extends Component {
   static defaultProps = {
-    center: { lat: 30.717916, lng: 76.812376 },
+    center: { lat: 7.2571, lng: 5.2058 },
     zoom: 18
   };
-  constructor(){
+  constructor() {
     super()
     this.countdown = this.countdown.bind(this);
     this.state = {
@@ -34,9 +34,9 @@ export default class LiveTraffic extends Component {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  countdown(time){
+  countdown(time) {
     let timer = setInterval(() => {
-      if(this.state.countdown > 0){
+      if (this.state.countdown > 0) {
         this.setState({
           countdown: this.state.countdown - 1
         })
@@ -44,46 +44,46 @@ export default class LiveTraffic extends Component {
       else {
         clearInterval(timer)
         this.setState({
-        countdown: time
-      })
-    }
+          countdown: time
+        })
+      }
     }, 1000);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const rand = (num) => Math.floor(Math.random() * num) + 1;
     const change = async () => {
       const lanes = 4;
       let n = 4, m = 0, flag = 1;
       let burst_time;
       while (1) {
-        if(flag){
+        if (flag) {
           burst_time = [rand(20), rand(20), rand(20), rand(20)];
           flag = !flag
         }
-        for(let k = 0; k < 4; k++){
+        for (let k = 0; k < 4; k++) {
           this.setState({
-            [`c${k+1}`]: burst_time[k]
+            [`c${k + 1}`]: burst_time[k]
           })
         }
         const changeTraffic = i => {
-          for(let k = 0; k < 4; k++){
-            if(i == k){
+          for (let k = 0; k < 4; k++) {
+            if (i == k) {
               console.log(i, 'lesss');
-              burst_time[i] -= rand(Math.ceil(burst_time[i]/2));
+              burst_time[i] -= rand(Math.ceil(burst_time[i] / 2));
               this.setState({
-                [`c${i+1}`]: burst_time[i]
+                [`c${i + 1}`]: burst_time[i]
               })
             }
             else {
               console.log(k, 'groww');
               burst_time[k] += rand(3);
               this.setState({
-                [`c${k+1}`]: burst_time[k]
+                [`c${k + 1}`]: burst_time[k]
               });
+            }
           }
         }
-      }
         let totalNoOfCars = await burst_time.reduce((i, val) => val + i);
         let totalTime = await this.carf(totalNoOfCars);
         let laneTime = [];
@@ -92,39 +92,39 @@ export default class LiveTraffic extends Component {
           console.log(laneTime[i]);
         }
 
-        if(m>3){
+        if (m > 3) {
           m -= 4;
         }
-          let y = laneTime[m];
-          if (y < totalTime / 10) {
-            y = totalTime / 10;
-          }
-          if (y > totalTime / 3) {
-            y = totalTime / 3;
-          }
-          // this.countdown(Math.floor(y));
-          let x = 0;
-          console.log(`Lane ${m + 1} is green`);
-          this.setState({
-            [`l${m+1}`]: 'green'
-          });
-          while (burst_time[m] != 0 && x <= y) {
-            await this.sleep(3000);
-            changeTraffic(m);
-            x += 3;
-          }
-            console.log(`Lane ${m + 1} is Yellow`);
-            this.setState({
-              [`l${m+1}`]: 'yellow'
-            });
-            console.log(this.state)
+        let y = laneTime[m];
+        if (y < totalTime / 10) {
+          y = totalTime / 10;
+        }
+        if (y > totalTime / 3) {
+          y = totalTime / 3;
+        }
+        // this.countdown(Math.floor(y));
+        let x = 0;
+        console.log(`Lane ${m + 1} is green`);
+        this.setState({
+          [`l${m + 1}`]: 'green'
+        });
+        while (burst_time[m] != 0 && x <= y) {
+          await this.sleep(3000);
+          changeTraffic(m);
+          x += 3;
+        }
+        console.log(`Lane ${m + 1} is Yellow`);
+        this.setState({
+          [`l${m + 1}`]: 'yellow'
+        });
+        console.log(this.state)
 
-            await this.sleep(3000);
-            console.log(`Lane ${m + 1} is Red`);
-            this.setState({
-              [`l${m+1}`]: 'red'
-            });
-            m +=1
+        await this.sleep(3000);
+        console.log(`Lane ${m + 1} is Red`);
+        this.setState({
+          [`l${m + 1}`]: 'red'
+        });
+        m += 1
       }
     }
     change();
@@ -140,11 +140,11 @@ export default class LiveTraffic extends Component {
           key: 'AIzaSyAtx_lIJ0GsFLKtlaCsMyo7K7Rq8IeTCx4'
         }}
       >
-      <div> {this.state.countdown} </div>
-        <Trafficlight color={this.state.l1} count={this.state.c1} lat={30.71855} lng={76.811848} />
-        <Trafficlight color={this.state.l2} count={this.state.c2} lat={30.718525} lng={76.812838} />
-        <Trafficlight color={this.state.l3} count={this.state.c3} lat={30.717693} lng={76.812767} />
-        <Trafficlight color={this.state.l4} count={this.state.c4} lat={30.717748} lng={76.811804} />
+        <div> {this.state.countdown} </div>
+        <Trafficlight color={this.state.l1} count={this.state.c1} lat={7.28} lng={5.15} />
+        <Trafficlight color={this.state.l2} count={this.state.c2} lat={7.26} lng={5.21} />
+        <Trafficlight color={this.state.l3} count={this.state.c3} lat={7.25} lng={5.22} />
+        <Trafficlight color={this.state.l4} count={this.state.c4} lat={7.25} lng={5.19} />
       </GoogleMapReact>
     );
   }

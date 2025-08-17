@@ -62,13 +62,13 @@
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
- 	center: [76.779418, 30.733315],
+ 	center: { lat: 7.2571, lng: 5.2058 },
     zoom: 14
 });
 		// 	var map = new mapboxgl.Map({
 		// 		container: "map",
 		// 		style: "mapbox://styles/mapbox/streets-v9",
-		// 		center: [76.7794, 30.741482],
+		// 		center: { lat: 7.2571, lng: 5.2058 }
 		// 		// minZoom: 15
 		// 	});
 			map.addControl(new mapboxgl.NavigationControl());

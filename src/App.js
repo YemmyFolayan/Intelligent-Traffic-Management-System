@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout } from 'antd';
+import { Layout, Icon } from 'antd';
 import { Switch, Route } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar/Sidebar';
@@ -10,20 +10,23 @@ import Heatmap from './components/LiveTraffic/Heatmap';
 import Statistics from './components/LiveTraffic/Statistics';
 import Fine from './components/Fine/Fine';
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 class App extends Component {
   render() {
     return (
       <Layout style={{ flexDirection: 'row' }}>
         <Sidebar />
+      
+               
         <Layout>
           <Header
             style={{
               padding: '0 30px',
               color: 'white',
               fontSize: 20,
-              fontWeight: 100
+              fontWeight: 100,
+              background: '#001529'
             }}
           >
             Dashboard
@@ -40,7 +43,22 @@ class App extends Component {
               </Switch>
             </div>
           </Content>
+            <Footer>
+               <div>
+                  <a 
+                    href="https://github.com/YemmyFolayan" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ color: 'inherit' }}
+                  >
+                    <Icon type="github" style={{ marginRight: 8 }} />
+                    Folayan, Iluyemi Michael | © 2025
+                  </a>
+                </div>
+            </Footer>
         </Layout>
+        
+      
       </Layout>
     );
   }
@@ -51,8 +69,15 @@ const styles = {
     width: '100%',
     height: '82vh',
     background: 'white',
-    boxShadow: '0px 2px 15px rgba(0,0,0,.2)',
+    boxShadow: '0px 2px 15px rgba(16, 11, 75, 0.2)',
     borderRadius: '3px'
+  },
+  footer: {
+    padding: '16px 24px',
+    color: 'rgba(255, 255, 255, 0.65)',
+    background: '#001529',
+    textAlign: 'center',
+    borderTop: '1px solid rgba(12, 7, 42, 0.1)'
   }
 };
 export default App;
