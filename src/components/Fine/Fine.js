@@ -21,7 +21,7 @@ export default class Fine extends React.Component {
   showDetails = () => {
     this.setState({
       rcFound: true,
-      rcnum: "KA04G860",
+      rcnum: "KTP700MF",
       name: "Michael Iluyemi Folayan",
       phone: "+234 81038 17187",
       address: "#64, Twin Towers, Bangalore",
