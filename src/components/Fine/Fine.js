@@ -24,7 +24,7 @@ export default class Fine extends React.Component {
       rcnum: "KTP700MF",
       name: "Michael Iluyemi Folayan",
       phone: "+234 81038 17187",
-      address: "#64, Twin Towers, Bangalore",
+      address: "#79, School of Computing, FUTA, Akure, Ondo State, Nigeria ",
       make: "Hyundai Ltd.",
       model: "Verna Sportz"
     });
