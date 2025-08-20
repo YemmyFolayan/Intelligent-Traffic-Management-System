@@ -47,7 +47,7 @@ export default class Fine extends React.Component {
               <Header.Subheader>Find the owner of the vehicle</Header.Subheader>
             </Header.Content>
           </Header>
-          <Input placeholder="Enter Plate Number - KA04G860" value="KA04G860" />
+          <Input placeholder="Enter Plate Number - KTP700AA" value="KTP700AA" />
           <br />
           <Button primary onClick={() => this.showDetails()}>
             FIND VEHICLE
