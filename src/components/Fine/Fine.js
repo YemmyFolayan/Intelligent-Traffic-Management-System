@@ -22,8 +22,8 @@ export default class Fine extends React.Component {
     this.setState({
       rcFound: true,
       rcnum: "KA04G860",
-      name: "Rakesh Ohja",
-      phone: "+91 90241 43281",
+      name: "Michael Iluyemi Folayan",
+      phone: "+234 81038 17187",
       address: "#64, Twin Towers, Bangalore",
       make: "Hyundai Ltd.",
       model: "Verna Sportz"
