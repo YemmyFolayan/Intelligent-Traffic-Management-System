@@ -21,10 +21,10 @@ export default class Fine extends React.Component {
   showDetails = () => {
     this.setState({
       rcFound: true,
-      rcnum: "KA04G860",
-      name: "Rakesh Ohja",
-      phone: "+91 90241 43281",
-      address: "#64, Twin Towers, Bangalore",
+      rcnum: "KTP700MF",
+      name: "Michael Iluyemi Folayan",
+      phone: "+234 81038 17187",
+      address: "#79, School of Computing, FUTA, Akure, Ondo State, Nigeria ",
       make: "Hyundai Ltd.",
       model: "Verna Sportz"
     });
@@ -47,7 +47,7 @@ export default class Fine extends React.Component {
               <Header.Subheader>Find the owner of the vehicle</Header.Subheader>
             </Header.Content>
           </Header>
-          <Input placeholder="Enter Plate Number - KA04G860" value="KA04G860" />
+          <Input placeholder="Enter Plate Number - KTP700AA" value="KTP700AA" />
           <br />
           <Button primary onClick={() => this.showDetails()}>
             FIND VEHICLE

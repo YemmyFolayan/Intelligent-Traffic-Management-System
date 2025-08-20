@@ -137,7 +137,7 @@ export default class LiveTraffic extends Component {
         layerTypes={['TrafficLayer']}
         options={{ styles: style }}
         bootstrapURLKeys={{
-          key: 'AIzaSyAtx_lIJ0GsFLKtlaCsMyo7K7Rq8IeTCx4'
+          key: 'AIzaSyCFPFJJySi4acdS2labyzfHNnVHqPYuDfM'
         }}
       >
         <div> {this.state.countdown} </div>
